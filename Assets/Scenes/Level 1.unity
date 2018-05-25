@@ -221,6 +221,14 @@ Prefab:
       propertyPath: m_Name
       value: Player Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 4330142336339110, guid: ccd04313267453f40890f0e3ddcf7720, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4330142336339110, guid: ccd04313267453f40890f0e3ddcf7720, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccd04313267453f40890f0e3ddcf7720, type: 2}
   m_IsPrefabParent: 0
@@ -818,7 +826,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1468848207}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -24.905}
 --- !u!114 &2093287089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,9 +838,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2387a05e40a97b542a07f9c335947733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 8
-  ySpeed: 8
+  xSpeed: 15
+  ySpeed: 15
   xClampLeft: -5
   xClampRight: 5
   yClampDown: -3
   yClampUp: 3
+  positionPitchFactor: -5
+  controlPitchFactor: -15
+  positionYawFactor: 5
+  controlYawFactor: 15
+  controlRollFactor: -15
