@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour {
 
     [Tooltip("Control amount of roll with throw")] [SerializeField] float controlRollFactor = -15f;
 
+    [Header("Misc Settings")]
+    [Tooltip("Effect (i.e. Particle System) to show on player death")] [SerializeField] GameObject deathFX;
+
 
     float xThrow, yThrow;
     bool controlsEnabled = true;
@@ -87,5 +90,10 @@ public class PlayerController : MonoBehaviour {
     void EnableControls()
     {
         this.controlsEnabled = true;
+    }
+
+    void HandlePlayerDeath() // Referenced by string
+    {
+        this.deathFX.SetActive(true);
     }
 }
