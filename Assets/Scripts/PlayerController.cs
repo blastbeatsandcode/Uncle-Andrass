@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
+    [Header("Weapons")]
+    [Tooltip("Set all weapons used by the ship")] [SerializeField] GameObject[] guns;
+    [Tooltip("Amount of damage player deals. Defaults to 10.")] [SerializeField] int damage = 10;
+
     [Header("Translation Settings")]
     [Tooltip("Set horizontal speed of ship when moving left and right; in ms^-1")][SerializeField] float xSpeed = 15f;
     [Tooltip("Set vertical speed of ship when moving up and down; in ms^-1")] [SerializeField] float ySpeed = 15f;
@@ -38,6 +42,35 @@ public class PlayerController : MonoBehaviour {
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
+        }
+    }
+
+    private void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeactivateGuns();
+        }
+    }
+
+    private void ActivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(true);
+        }
+    }
+
+    private void DeactivateGuns()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(false);
         }
     }
 
@@ -95,5 +128,10 @@ public class PlayerController : MonoBehaviour {
     void HandlePlayerDeath() // Referenced by string
     {
         this.deathFX.SetActive(true);
+    }
+
+    public int getDamage()
+    {
+        return this.damage;
     }
 }

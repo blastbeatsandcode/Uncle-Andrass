@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114935482209114448}
   m_Layer: 0
   m_Name: Player Ship 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 198422357062641154}
   - component: {fileID: 199157087507472166}
   m_Layer: 0
-  m_Name: Bullets Right
+  m_Name: Gun Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 198783345757571950}
   - component: {fileID: 199174432976955582}
   m_Layer: 0
-  m_Name: Bullets Left
+  m_Name: Gun Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,6 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2387a05e40a97b542a07f9c335947733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guns:
+  - {fileID: 1465650112296880}
+  - {fileID: 1619360337373544}
   xSpeed: 15
   ySpeed: 15
   xClampLeft: -5

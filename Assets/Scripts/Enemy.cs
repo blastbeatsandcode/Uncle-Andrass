@@ -12,8 +12,11 @@ public class Enemy : MonoBehaviour {
     [Tooltip("GameObject to child the FX to")] [SerializeField] Transform parent;
     [Tooltip("Score value of destroying enemy")] [SerializeField] uint scoreValue = 100;
 
+    [Tooltip("Health Pool of enemy. Defaults to 100.")] [SerializeField] int hitPoints = 100;
+
     ScoreBoard scoreBoard;
-    bool isHit = false;
+    bool isDead = false;
+    int damage;
 
     // Use this for initialization
     void Start () {
@@ -21,7 +24,8 @@ public class Enemy : MonoBehaviour {
         AddNonTriggerBoxCollider();
         AddEnemyTag();
         scoreBoard = FindObjectOfType<ScoreBoard>();
-	}
+        damage = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().getDamage();
+    }
 
     private void AddEnemyTag()
     {
@@ -36,17 +40,29 @@ public class Enemy : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
-        if (!isHit) // Prevent from multiple particle collisions before delete
+        DealDamage();
+        // Kill the enemy if hp drops to or below 0
+        if (this.hitPoints <= 0 && !isDead)
         {
-            isHit = true;
-            // Update score
-            this.scoreBoard.IncreaseScore(scoreValue);
-
-            // Create the deathFX instance and child it to the specified parent. Then, destroy the ship.
-            GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-            fx.transform.parent = parent;
-
-            Destroy(this.gameObject);
+            isDead = true;
+            KillEnemy();
         }
+    }
+
+    private void DealDamage()
+    {
+        hitPoints -= damage;
+    }
+
+    private void KillEnemy()
+    {
+        // Create the deathFX instance and child it to the specified parent. Then, destroy the ship.
+        GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+        fx.transform.parent = parent;
+
+        // Update score
+        this.scoreBoard.IncreaseScore(scoreValue);
+
+        Destroy(this.gameObject);
     }
 }
