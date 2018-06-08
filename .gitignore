@@ -6,7 +6,8 @@
 [Aa]ssets/Prefabs/StarSparrow
 [Aa]ssets/Prefabs/Space_Enemy
 [Aa]ssets/Materials/epyphany
-Assets/AssetStoreTools*
+[Aa]ssets/AssetStoreTools*
+[Aa]ssets/Prefabs/Julai_models
 
 # Visual Studio cache directory
 .vs/

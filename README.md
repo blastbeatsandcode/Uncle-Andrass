@@ -8,5 +8,5 @@ Some kinda rail shooter or something. Made in Unity.
 - [Texture Pack](https://assetstore.unity.com/packages/2d/textures-materials/24-pbr-materials-for-unity-5-51991) ** *This needs to be downloaded separately to work with project**
 - [Ships](https://assetstore.unity.com/packages/3d/vehicles/space/star-sparrow-modular-spaceship-73167) ** *This needs to be downloaded separately to work with project**
 - [Skybox](https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-volume-2-nebula-3392)
-- [Enemy Ships](https://assetstore.unity.com/packages/3d/characters/generic-arcade-style-spaceships-97811)
+- [Lots of cool assets!](https://assetstore.unity.com/packages/3d/environments/sci-fi/julai-models-75013) ** *This needs to be downloaded separately to work with project**
 - [UI Text](https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126)
