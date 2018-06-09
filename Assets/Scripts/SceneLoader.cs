@@ -8,11 +8,16 @@ public class SceneLoader : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Invoke("LoadFirstScene", 12f);
+       // Invoke("LoadFirstScene", 12f);
     }
 
-    void LoadFirstScene()
+    public void LoadFirstScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

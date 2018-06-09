@@ -8,9 +8,9 @@ public class MusicPlayer : MonoBehaviour
     void Awake()
     {
 
-        if (FindObjectsOfType<MusicPlayer>().Length > 0) // If there is already a music player on the screen, destroy the new music player
+        if (FindObjectsOfType<MusicPlayer>().Length > 1) // If there is already a music player on the screen, destroy the new music player
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else // Otherwise create one
         {
